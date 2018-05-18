@@ -1,0 +1,53 @@
+import simplegui
+import math
+    
+number1=0
+operand=0
+Total=0
+
+def output():
+   print  "number1=", number1
+   print  "operand=", operand
+   print  "Total=", Total
+
+def enter(input):
+   global operand
+   operand= int(input)
+   output()
+
+def enter1(input):    
+   global number1
+   number1= int(input)
+   output()
+
+
+def add():
+   global Total
+   Total = number1 + operand
+   output()
+
+def sub():
+   global Total 
+   Total = number1 - operand
+   output()
+
+def mult():
+   global Total
+   Total = number1 * operand
+   output()
+
+def div():
+   global Total
+   Total = number1 / operand
+   output()
+
+f=simplegui.create_frame("Calculator",150,200)
+f.add_input("Enter", enter, 100)
+f.add_input("Enter1", enter1, 100)
+f.add_button("+", add, 100)
+f.add_button("-", sub, 100)
+f.add_button("*", mult, 100)
+f.add_button("/", div, 100)
+
+f.start()
+
